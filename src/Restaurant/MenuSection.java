@@ -17,5 +17,4 @@ private final Menu menu;
         this.menu = menu;
     }
 
-
 }

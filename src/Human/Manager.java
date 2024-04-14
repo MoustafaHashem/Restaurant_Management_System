@@ -44,8 +44,7 @@ public class Manager extends Employee implements Restaurant {
         return employees;
     }
 
-    @Override
-    public ArrayList<Table> getTables() {
+    public static ArrayList<Table> getTables() {
         return tables;
     }
 
@@ -59,8 +58,7 @@ public class Manager extends Employee implements Restaurant {
         return menuSections;
     }
 
-    @Override
-    public ArrayList<MenuItem> getMenuItems() {
+    public static ArrayList<MenuItem> getMenuItems() {
         return menuItems;
     }
 }

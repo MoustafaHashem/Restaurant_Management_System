@@ -2,7 +2,6 @@ package Services;
 
 import Human.Customer;
 import Restaurant.Table;
-
 import java.util.Scanner;
 
 public class Bill extends Table {

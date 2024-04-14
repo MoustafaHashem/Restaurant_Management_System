@@ -1,14 +1,17 @@
 package Services;
 
-import Restaurant.MenuItem;
+import Human.Chief;
+import Restaurant.*;
+import Human.Manager;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Order {
     private final int  orderID;
     private boolean isReady;
     private double cost;
     private static int count=1;
-    private ArrayList<MenuItem> meals=new ArrayList<>();
+    private static ArrayList<MenuItem> meals=new ArrayList<>();
 
     public int getOrderID() {
         return orderID;
@@ -30,7 +33,9 @@ public class Order {
         this.cost = cost;
     }
 
-
+    public static void setMeals(ArrayList<MenuItem> meals) {
+        Order.meals = meals;
+    }
 
     public Order() {
         this.orderID = count++;
@@ -38,23 +43,45 @@ public class Order {
         this.cost = 0;
         this.meals = null;
     }
-    public void addMenuItem(MenuItem mi){
-        meals.add(mi);
-        cost=cost+mi.getPrice();
+    public void addMeal(int ID){
+        int size = Manager.getMenuItems().size();
+        int i;
+        for (i = 0; i < size; i++) {
+            if (Manager.getMenuItems().get(i).getID() == ID)
+                break;
+        }
+        meals.add(Manager.getMenuItems().get(i));
+        cost += Manager.getMenuItems().get(i).getPrice();
     }
-    public void removeMenuItem(MenuItem mi){
-        meals.remove(mi);
-        cost=cost-mi.getPrice();
+    public void removeMeal(int ID){
+        int size = Manager.getMenuItems().size();
+        int i;
+        for (i = 0; i < size; i++) {
+            if (Manager.getMenuItems().get(i).getID() == ID)
+                break;
+        }
+        meals.remove(Manager.getMenuItems().get(i));
+        cost -= Manager.getMenuItems().get(i).getPrice();
     }
-    /*
-    puplic static void addOrder(Table t) {
-    int x = t.numberofpeo;
-    for (int i = 0; i < x; i++) {
-    t.order.addMeal(menuItems[input])
-    t.order.cost = t.order.cost + menuitems[input.price]
 
+    public static void addOrder(Table t) throws InterruptedException {
+        int num = t.getReservation().getNumberOfPeoples();
+        int i;
+        for (i = 1; i <= num; i++) {
+        System.out.println(num +"# order");
+        Scanner in = new Scanner(System.in);
+        t.getOrder().addMeal(in.nextInt());
+        }
+        Thread.sleep(10000);
+        Chief.prepareOrder(t);
     }
-    delay
-    chief make the order
-    */
+    public static void modifyOrder(Table t, int oldMeal, MenuItem newMeal) {
+        int num = t.getReservation().getNumberOfPeoples();
+        int i;
+        for (i = 1; i <= num; i++) {
+            if (oldMeal == meals.get(i).getID()) break;
+        }
+        meals.remove(i);
+        meals.add(newMeal);
+    }
 }

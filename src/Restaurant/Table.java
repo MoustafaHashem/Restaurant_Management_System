@@ -5,20 +5,21 @@ import Services.Reservation;
 
 public class Table {
     protected Order Order;
-    private int tableNum=0;
+    private int tableNum;
+    private static int count = 1;
     private boolean isReserved;
     protected Order order;
     private Reservation reservation;
 
     public Table(){
-        this.tableNum ++;
+        this.tableNum = count++;
         this.isReserved = false;
     }
 
     public int getTableNum() {
         return tableNum;
     }
-    public boolean isReserverd (){
+    public boolean isReserverd(){
         return isReserved;
     }
 

@@ -19,16 +19,8 @@ public interface Restaurant {
 
      ArrayList<Employee> getEmployees() ;
 
-
-     ArrayList<Table> getTables();
-
-
      ArrayList<Menu> getMenus();
 
-
      ArrayList<MenuSection> getMenuSections();
-
-
-     ArrayList<MenuItem> getMenuItems();
 
 }
