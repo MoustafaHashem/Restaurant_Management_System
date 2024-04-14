@@ -38,11 +38,11 @@ public class Order {
         this.cost = 0;
         this.meals = null;
     }
-    public void addMenuItem(MenuItem mi){
+    public void addMeal(MenuItem mi){
         meals.add(mi);
         cost=cost+mi.getPrice();
     }
-    public void removeMenuItem(MenuItem mi){
+    public void removeMeal(MenuItem mi){
         meals.remove(mi);
         cost=cost-mi.getPrice();
     }
