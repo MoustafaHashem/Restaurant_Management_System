@@ -4,9 +4,10 @@ import Services.Order;
 import Services.Reservation;
 
 public class Table {
+    protected Order Order;
     private int tableNum=0;
     private boolean isReserved;
-    private Order order;
+    protected Order order;
     private Reservation reservation;
 
     public Table(){
