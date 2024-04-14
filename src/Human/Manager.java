@@ -2,44 +2,66 @@ package Human;
 
 import Restaurant.*;
 
-public class Manager extends Employee {
-    Restaurant my_Restaurant;
+import java.util.ArrayList;
 
-    public Manager(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank, Restaurant my_Restaurant) {
+public class Manager extends Employee implements Restaurant {
+
+
+    public Manager(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank ) {
         super(name, age, address, phone, employeeID, email, password, salary, rank);
-        this.my_Restaurant = my_Restaurant;
     }
 
-    public void addMenu(Menu m){
-        my_Restaurant.getMenus().add(m);
-    }
-
+    public void addMenu(Menu m){getMenus().add(m);}
     public void removeMenu(Menu m){
-        my_Restaurant.getMenus().remove(m);
+        getMenus().remove(m);
     }
     public void addMenuSection(MenuSection ms){
-        my_Restaurant.getMenuSections().add(ms);
+        getMenuSections().add(ms);
     }
     public void removeMenuSection(MenuSection ms){
-        my_Restaurant.getMenuSections().remove(ms);
+        getMenuSections().remove(ms);
     }
     public void addMenuItem(MenuItem mi){
-        my_Restaurant.getMenuItems().add(mi);
+        getMenuItems().add(mi);
     }
     public void removeMenuItem(MenuItem mi){
-        my_Restaurant.getMenuItems().remove(mi);
+        getMenuItems().remove(mi);
     }
     public void addTable(Table t){
-        my_Restaurant.getTables().add(t);
+        getTables().add(t);
     }
     public void removeTable(Table t){
-        my_Restaurant.getTables().remove(t);
+        getTables().remove(t);
     }
     public void addEmployee(Employee e){
-        my_Restaurant.getEmployees().add(e);
+        getEmployees().add(e);
     }
     public void removeEmployee(Employee e){
-        my_Restaurant.getEmployees().remove(e);
+        getEmployees().remove(e);
     }
 
+    @Override
+    public ArrayList<Employee> getEmployees() {
+        return employees;
+    }
+
+    @Override
+    public ArrayList<Table> getTables() {
+        return tables;
+    }
+
+    @Override
+    public ArrayList<Menu> getMenus() {
+        return menus;
+    }
+
+    @Override
+    public ArrayList<MenuSection> getMenuSections() {
+        return menuSections;
+    }
+
+    @Override
+    public ArrayList<MenuItem> getMenuItems() {
+        return menuItems;
+    }
 }
