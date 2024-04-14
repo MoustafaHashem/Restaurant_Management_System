@@ -72,6 +72,7 @@ public class Order {
         Scanner in = new Scanner(System.in);
         t.getOrder().addMeal(in.nextInt());
         }
+        // add order to table
         Thread.sleep(10000);
         Chief.prepareOrder(t);
     }

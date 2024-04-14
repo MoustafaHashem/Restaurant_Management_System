@@ -50,7 +50,5 @@ public class Customer extends Person {
         checkOutDate = new Date();
     }
 
-    public void cancelReservation(Reservation r) {
-        //r.id = xxxxx;
-    }
+
 }

@@ -4,7 +4,7 @@ import Services.Order;
 import Services.Reservation;
 
 public class Table {
-    protected Order Order;
+    protected Order Order;// why??
     private int tableNum;
     private static int count = 1;
     private boolean isReserved;
