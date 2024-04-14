@@ -1,5 +1,6 @@
 package Restaurant;
 
+import Human.Employee;
 import Restaurant.Menu;
 
 import java.util.ArrayList;
