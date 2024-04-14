@@ -5,7 +5,7 @@ public class Order {
     private boolean isReady;
     private double cost;
     private static int count=1;
-    private ArrayList<MenuIteme> meals;
+    private ArrayList<MenuIteme> meals=new ArrayList<>();
 
     public int getOrderID() {
         return orderID;
