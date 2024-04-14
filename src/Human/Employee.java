@@ -1,18 +1,60 @@
 package Human;
 
-public class Employee extends Person {
-        private int employeeID;
-        private String email;
-        private String password;
-        private int salary;
-        private String rank;
+import java.util.Date;
 
-    public Employee(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank) {
+public class Employee extends Person {
+    private static int count = 10;
+    private Date joinedDate;
+    private final String employeeID;
+    private final String email;
+    private String password;
+    private int salary;
+    private String rank;
+
+    public Employee(String name, int age, String address, int phone, String password, int salary, String rank) {
         super(name, age, address, phone);
-        this.employeeID = employeeID;
-        this.email = email;
-        this.password = password;
+        this.employeeID = Integer.toString(joinedDate.getYear()) + Integer.toString(count);
+        this.email = employeeID+"@Gusteau.ASU";
+        if (checkPassword(password)) this.password = password;
+        //Error
         this.salary = salary;
+        this.rank = rank;
+        count++;
+    }
+
+    public Date getJoinedDate() {
+        return joinedDate;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
         this.rank = rank;
     }
 

@@ -1,14 +1,13 @@
 package Human;
 
 import Restaurant.*;
-
 import java.util.ArrayList;
 
 public class Manager extends Employee implements Restaurant {
 
 
-    public Manager(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank ) {
-        super(name, age, address, phone, employeeID, email, password, salary, rank);
+    public Manager(String name, int age, String address, int phone, String password, int salary, String rank ) {
+        super(name, age, address, phone, password, salary, rank);
     }
 
     public void addMenu(Menu m){getMenus().add(m);}

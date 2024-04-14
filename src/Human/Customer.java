@@ -5,15 +5,36 @@ import Services.Reservation;
 import Services.Order;
 
 public class Customer extends Person {
-    private int customerId;
+    private static int count = 1;
+    private final int customerId;
     private Reservation reservation;
     private Date checkInDate;
     private Date checkOutDate;
 
-    public Customer(String name, int age, String address, int phone, int customerId, Reservation reservation) {
+    public Customer(String name, int age, String address, int phone, Reservation reservation) {
         super(name, age, address, phone);
-        this.customerId = customerId;
+        this.customerId = count++;
         this.reservation = reservation;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
+
+    public Date getCheckInDate() {
+        return checkInDate;
+    }
+
+    public Date getCheckOutDate() {
+        return checkOutDate;
     }
 
     @Override
@@ -21,7 +42,7 @@ public class Customer extends Person {
         super.print();
         System.out.println("Customer{" + " customerId= " + customerId + ", reservation= " + reservation + '}');
     }
-    public void checkIn(Date d) {
+    public void checkIn() {
         checkInDate = new Date();
     }
 
@@ -30,10 +51,6 @@ public class Customer extends Person {
     }
 
     public void cancelReservation(Reservation r) {
+        //r.id = xxxxx;
     }
-
-    public Date lastVisit() {
-        return checkInDate;
-    }
-
 }
