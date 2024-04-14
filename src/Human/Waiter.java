@@ -11,10 +11,11 @@ public class Waiter extends Employee {
     void addOrder(Table t) {
     int x = t.numberofpeo;
     for (int i = 0; i < x; i++) {
-    t.order.addMeal(menuItems[input])
+    t.order.addMeal(mi)
     t.order.cost = t.order.cost + menuitems[input.price]
 
     }
+    delay
     chief make the order
     */
 

@@ -46,4 +46,15 @@ public class Order {
         meals.remove(mi);
         cost=cost-mi.getPrice();
     }
+    /*
+    puplic static void addOrder(Table t) {
+    int x = t.numberofpeo;
+    for (int i = 0; i < x; i++) {
+    t.order.addMeal(menuItems[input])
+    t.order.cost = t.order.cost + menuitems[input.price]
+
+    }
+    delay
+    chief make the order
+    */
 }
