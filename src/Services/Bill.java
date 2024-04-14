@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Bill extends Table {
     private double bill;
+    // handle cost here and revise the class
     private Customer customer;
     private String paymentType;
 
