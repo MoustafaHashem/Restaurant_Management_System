@@ -1,3 +1,5 @@
+package Restaurant;
+
 public class Menu {
     private final String title;
 

@@ -1,3 +1,5 @@
+package Restaurant;
+
 public class MenuItem {
     private final String title;
     private final int ID;
@@ -19,7 +21,7 @@ public class MenuItem {
         this.price = price;
     }
 
-    public MenuItem(MenuSection menuSection,String title, double price) {
+    public MenuItem(MenuSection menuSection, String title, double price) {
         this.title = title;
         this.ID = count++;
         this.price = price;

@@ -1,5 +1,8 @@
+package Human;
 
-public class Manager extends Employee{
+import Restaurant.Menu;
+
+public class Manager extends Employee {
     Restaurant my_Restaurant;
 
     public Manager(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank, Restaurant my_Restaurant) {
