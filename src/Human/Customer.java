@@ -7,7 +7,8 @@ import Services.Order;
 public class Customer extends Person {
     private int customerId;
     private Reservation reservation;
-    private Date date;
+    private Date checkInDate;
+    private Date checkOutDate;
 
     public Customer(String name, int age, String address, int phone, int customerId, Reservation reservation) {
         super(name, age, address, phone);
@@ -21,20 +22,18 @@ public class Customer extends Person {
         System.out.println("Customer{" + " customerId= " + customerId + ", reservation= " + reservation + '}');
     }
     public void checkIn(Date d) {
+        checkInDate = new Date();
     }
 
-    public Date checkOut() {
-        return new Date();
+    public void checkOut() {
+        checkOutDate = new Date();
     }
 
     public void cancelReservation(Reservation r) {
     }
 
-    public void modifyOrder(Order o) {
-    }
-
     public Date lastVisit() {
-        return checkOut();
+        return checkInDate;
     }
 
 }
