@@ -24,7 +24,7 @@ public class Manager extends Employee{
         my_Restaurant.getMenuItems().add(mi);
     }
     public void removeMenuItem(MenuItem mi){
-        my_Restaurant.getMenuSections().remove(mi);
+        my_Restaurant.getMenuItems().remove(mi);
     }
     public void addTable(Table t){
         my_Restaurant.getTables().add(t);
@@ -36,7 +36,7 @@ public class Manager extends Employee{
         my_Restaurant.getEmployees().add(e);
     }
     public void removeEmployee(Employee e){
-        my_Restaurant.getTables().remove(e);
+        my_Restaurant.getEmployees().remove(e);
     }
 
 }
