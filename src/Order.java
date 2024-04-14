@@ -5,7 +5,7 @@ public class Order {
     private boolean isReady;
     private double cost;
     private static int count=1;
-    private ArrayList<MenuIteme> meals=new ArrayList<>();
+    private ArrayList<MenuItem> meals=new ArrayList<>();
 
     public int getOrderID() {
         return orderID;
@@ -35,11 +35,11 @@ public class Order {
         this.cost = 0;
         this.meals = null;
     }
-    public void addMenuIteme(MenuIteme mi){
+    public void addMenuItem(MenuItem mi){
         meals.add(mi);
         cost=cost+mi.getPrice();
     }
-    public void removeMenuIteme(MenuIteme mi){
+    public void removeMenuItem(MenuItem mi){
         meals.remove(mi);
         cost=cost-mi.getPrice();
     }

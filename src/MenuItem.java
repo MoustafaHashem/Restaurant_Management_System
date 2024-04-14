@@ -1,4 +1,4 @@
-public class MenuIteme {
+public class MenuItem {
     private final String title;
     private final int ID;
     private static int count;
@@ -19,7 +19,7 @@ public class MenuIteme {
         this.price = price;
     }
 
-    public MenuIteme(MenuSection menuSection,String title, double price) {
+    public MenuItem(MenuSection menuSection,String title, double price) {
         this.title = title;
         this.ID = count++;
         this.price = price;

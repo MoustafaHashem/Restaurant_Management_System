@@ -20,10 +20,10 @@ public class Manager extends Employee{
     public void removeMenuSection(MenuSection ms){
         my_Restaurant.getMenuSections().remove(ms);
     }
-    public void addMenuIteme(MenuIteme mi){
-        my_Restaurant.getMenuItemes().add(mi);
+    public void addMenuItem(MenuItem mi){
+        my_Restaurant.getMenuItems().add(mi);
     }
-    public void removeMenuIteme(MenuIteme mi){
+    public void removeMenuItem(MenuItem mi){
         my_Restaurant.getMenuSections().remove(mi);
     }
     public void addTable(Table t){

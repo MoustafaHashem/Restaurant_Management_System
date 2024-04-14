@@ -8,7 +8,7 @@ public class Restaurant {
     private ArrayList<Table> tables=new ArrayList<>();
     private ArrayList<Menu> menus=new ArrayList<>();
     private ArrayList<MenuSection> menuSections=new ArrayList<>();
-    private ArrayList<MenuIteme> menuItemes=new ArrayList<>();
+    private ArrayList<MenuItem> menuItems=new ArrayList<>();
 
     public Restaurant(String name, String location, int stars) {
         this.name = name;
@@ -60,11 +60,11 @@ public class Restaurant {
         this.menuSections = menuSections;
     }
 
-    public ArrayList<MenuIteme> getMenuItemes() {
-        return menuItemes;
+    public ArrayList<MenuItem> getMenuItems() {
+        return menuItems;
     }
 
-    public void setMenuItemes(ArrayList<MenuIteme> menuItemes) {
-        this.menuItemes = menuItemes;
+    public void setMenuItems(ArrayList<MenuItem> menuItems) {
+        this.menuItems = menuItems;
     }
 }
