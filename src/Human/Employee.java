@@ -7,17 +7,22 @@ public class Employee extends Person {
         private int salary;
         private String rank;
 
-        public Employee(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank) {
-            super(name, age, address, phone);
-            this.employeeID = employeeID;
-            this.email = email;
-            this.password = password;
-            this.salary = salary;
-            this.rank = rank;
-        }
+    public Employee(String name, int age, String address, int phone, int employeeID, String email, String password, int salary, String rank) {
+        super(name, age, address, phone);
+        this.employeeID = employeeID;
+        this.email = email;
+        this.password = password;
+        this.salary = salary;
+        this.rank = rank;
+    }
 
-        @Override
+    @Override
         public void print() {
-            System.out.println("Employee{employeeID= " + employeeID + ", email= " + email + ", password= " + password + ", salary= " + salary + ", rank= " + rank + '}');
-        }
+        super.print();
+        System.out.println("Employee{employeeID= " + employeeID + ", email= " + email + ", password= " + password + ", salary= " + salary + ", rank= " + rank + '}');
+    }
+    public static boolean checkPassword(String p) {
+        if (p.length() >= 8) return true;
+        return false;
+    }
 }

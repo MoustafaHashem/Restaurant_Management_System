@@ -7,7 +7,5 @@ public class Waiter extends Employee {
         super(name, age, address, phone, employeeID, email, password, salary, rank);
     }
 
-    public void addOrder(Table t) {
-
-    }
+    //public void addOrder(Table t) {}
 }
