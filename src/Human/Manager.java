@@ -1,6 +1,6 @@
 package Human;
 
-import Restaurant.Menu;
+import Restaurant.*;
 
 public class Manager extends Employee {
     Restaurant my_Restaurant;
