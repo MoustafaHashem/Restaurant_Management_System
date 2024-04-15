@@ -30,6 +30,7 @@ public abstract class Bill extends Table {
         }
         Manager.getTables().get(y).getCustomer().checkOut();
         System.out.println("Thank You For Coming Our Restaurant");
+        Manager.getTables().get(y).removeReservation();
     }
 
     public static void visa (int password){

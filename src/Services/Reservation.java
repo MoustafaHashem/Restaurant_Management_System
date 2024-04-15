@@ -66,11 +66,11 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         System.out.println("cancelled");
     }
     public static void changeReservation(int id,LocalDate d){
-        int size = reservations.size();
+        int size = reservations.size(); // if size =0 throw exception
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
-                break;
+            if (reservations.get(i).getID() == id){
+                break;}
         }
         reservations.get(i).setDate(d);
         System.out.println("changed");
