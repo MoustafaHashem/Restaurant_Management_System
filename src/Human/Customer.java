@@ -13,7 +13,7 @@ public class Customer extends Person {
     private LocalDate checkOutDate;
     private double discount;
 
-    public Customer(String name, int age, String address, int phone) {
+    public Customer(String name, int age, String address, String phone) {
         super(name, age, address, phone);
         this.customerId = count++;
         discount =0;

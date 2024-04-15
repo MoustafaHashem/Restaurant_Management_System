@@ -12,7 +12,7 @@ public class Employee extends Person {
     private int salary;
     private String rank;
 
-    public Employee(String name, int age, String address, int phone, String password, int salary, String rank) {
+    public Employee(String name, int age, String address, String phone, String password, int salary, String rank) {
         super(name, age, address, phone);
         this.joinedDate = LocalDate.now();
         this.employeeID = joinedDate.getYear() + Integer.toString(count);

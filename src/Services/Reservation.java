@@ -93,7 +93,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         System.out.println("address");
         String address=in.nextLine();
         System.out.println("phone");
-        int phone=in.nextInt();
+        String phone=in.next();
         Customer c=new Customer(name,age,address,phone);
         Reservation r = new Reservation(d,n);
         reservations.add(r);
