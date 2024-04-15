@@ -51,5 +51,6 @@ public class Main {
             Reservation.makeReservation(LocalDate.now(),1,1);
             Order.addOrder(1);
             Bill.payment(1);
+        System.out.println("hey");
     }
 }
