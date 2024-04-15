@@ -54,7 +54,9 @@ public class Main {
         }
         System.out.println("---------------------------------------------------------------------------------");
         Reservation.makeReservation(LocalDate.now(),2,1);
+        Reservation.cancelReservation(1);
         Order.addOrder(1);
+        Order.modifyOrder(1,2,5);
         Bill.payment(1);
 
 

@@ -54,7 +54,16 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             if (reservations.get(i).getID() == id)
                 break;
         }
-        reservations.get(i).setID(0);
+        reservations.remove(i);
+        int x = Manager.getTables().size();
+        int y;
+        for (y = 0; i < x; i++) {
+            if (Manager.getTables().get(y).getReservation().getID() == id) {
+                Manager.getTables().get(y).removeReservation();
+                break;
+            }
+        }
+        System.out.println("cancelled");
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size();
@@ -64,6 +73,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
                 break;
         }
         reservations.get(i).setDate(d);
+        System.out.println("changed");
     }
     public  static void changeReservation(int id,int n){
         int size = reservations.size();
@@ -73,6 +83,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
                 break;
         }
         reservations.get(i).setNumberOfPeoples(n);
+        System.out.println("changed");
     }
     public  static void changeReservation(int id,LocalDate d,int n){
         int size = reservations.size();
@@ -83,6 +94,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         }
         reservations.get(i).setNumberOfPeoples(n);
         reservations.get(i).setDate(d);
+        System.out.println("changed");
     }
     public  static void makeReservation(LocalDate d, int n, int tableNum){
         Scanner in=new Scanner(System.in);

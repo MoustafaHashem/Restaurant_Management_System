@@ -40,6 +40,10 @@ public class Table {
     public Reservation getReservation() {
         return reservation;
     }
+    public void removeReservation() {
+          this.reservation=null;
+    }
+
     public void addReservation (Reservation reservation){
         this.reservation = reservation;
         isReserved = true;
