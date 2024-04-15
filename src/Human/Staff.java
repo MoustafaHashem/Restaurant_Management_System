@@ -3,7 +3,7 @@ package Human;
 import java.time.LocalDate;
 
 
-public class Employee extends Person {
+public class Staff extends Person {
     private static int count = 10;
     private final LocalDate joinedDate;
     private final String employeeID;
@@ -12,7 +12,7 @@ public class Employee extends Person {
     private int salary;
     private String rank;
 
-    public Employee(String name, int age, String address, String phone, String password, int salary, String rank) {
+    public Staff(String name, int age, String address, String phone, String password, int salary, String rank) {
         super(name, age, address, phone);
         this.joinedDate = LocalDate.now();
         this.employeeID = joinedDate.getYear() + Integer.toString(count);

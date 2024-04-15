@@ -1,6 +1,6 @@
 package Restaurant;
 
-import Human.Employee;
+import Human.Staff;
 
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public interface Restaurant {
       String NAME="Gusteau";
       String LOCATION="France";
       int stars=5;
-     ArrayList<Employee> employees=new ArrayList<>();
+     ArrayList<Staff> employees=new ArrayList<>();
      ArrayList<Table> tables=new ArrayList<>();
      ArrayList<Menu> menus=new ArrayList<>();
      ArrayList<MenuSection> menuSections=new ArrayList<>();
@@ -17,7 +17,7 @@ public interface Restaurant {
 
 
 
-     ArrayList<Employee> getEmployees() ;
+     ArrayList<Staff> getEmployees() ;
 
      ArrayList<Menu> getMenus();
 

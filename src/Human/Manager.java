@@ -3,7 +3,7 @@ package Human;
 import Restaurant.*;
 import java.util.ArrayList;
 
-public class Manager extends Employee implements Restaurant {
+public class Manager extends Staff implements Restaurant {
 
 
     public Manager(String name, int age, String address, String phone, String password, int salary, String rank ) {
@@ -32,15 +32,15 @@ public class Manager extends Employee implements Restaurant {
     public void removeTable(Table t){
         getTables().remove(t);
     }
-    public void addEmployee(Employee e){
+    public void addEmployee(Staff e){
         getEmployees().add(e);
     }
-    public void removeEmployee(Employee e){
+    public void removeEmployee(Staff e){
         getEmployees().remove(e);
     }
 
     @Override
-    public ArrayList<Employee> getEmployees() {
+    public ArrayList<Staff> getEmployees() {
         return employees;
     }
 
