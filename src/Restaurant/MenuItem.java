@@ -11,8 +11,6 @@ public class MenuItem {
         return title;
     }
 
-
-
     public double getPrice() {
         return price;
     }
@@ -25,7 +23,7 @@ public class MenuItem {
         this.title = title;
         this.ID = count++;
         this.price = price;
-        this.menuSection=menuSection;
+        this.menuSection = menuSection;
     }
     public void updatePrice(double p){
         setPrice(p);
@@ -40,10 +38,6 @@ public class MenuItem {
     }
     public void print() {
         menuSection.print();
-        System.out.println("MenuItem{" +
-            "title='" + title + '\'' +
-                    ", ID=" + ID +
-                    ", price=" + price +
-                    '}');
+        System.out.println("MenuItem{" + "title= " + title + ", ID= " + ID + ", price= " + price + '}');
     }
 }

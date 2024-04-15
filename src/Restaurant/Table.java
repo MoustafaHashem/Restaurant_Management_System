@@ -53,9 +53,6 @@ public class Table {
         this.order = order;
     }
     public void print() {
-        System.out.println("Table{" +
-                "tableNum=" + tableNum +
-                ", isReserved=" + isReserved +
-                '}');
+        System.out.println("Table{" + "tableNum= " + tableNum + ", isReserved= " + isReserved + '}');
     }
 }
