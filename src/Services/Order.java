@@ -76,6 +76,7 @@ public class Order {
         // add order to table
         Manager.getTables().get(y).addOrder(order);
         Thread.sleep(10000);
+        System.out.println("order is cooked");
     }
     public static void modifyOrder(int tableNum, int oldMeal, int newMeal) { // edit func to take int
         int x = Manager.getTables().size();

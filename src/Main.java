@@ -53,7 +53,10 @@ public class Main {
             mousatafa.getMenuItems().get(i).print();
         }
         System.out.println("---------------------------------------------------------------------------------");
-
+            Reservation.makeReservation(LocalDate.now(),5,2);
+            Order.addOrder(2);
+            Order.modifyOrder(2,2,3);
+            Bill.payment(2);
 
     }
 }
