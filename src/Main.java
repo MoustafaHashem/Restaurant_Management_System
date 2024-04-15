@@ -1,12 +1,7 @@
 import Human.Staff;
 import Human.Manager;
-import Restaurant.Menu;
-import Restaurant.MenuItem;
-import Restaurant.MenuSection;
-import Restaurant.Table;
-import Services.Bill;
-import Services.Order;
-import Services.Reservation;
+import Restaurant.*;
+import Services.*;
 
 import java.time.LocalDate;
 

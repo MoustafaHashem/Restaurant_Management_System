@@ -4,8 +4,6 @@ import Restaurant.*;
 import java.util.ArrayList;
 
 public class Manager extends Staff implements Restaurant {
-
-
     public Manager(String name, int age, String address, String phone, String password, int salary, String rank ) {
         super(name, age, address, phone, password, salary, rank);
     }
@@ -38,25 +36,18 @@ public class Manager extends Staff implements Restaurant {
         getEmployees().remove(i);
     }
 
-    @Override
-    public ArrayList<Staff> getEmployees() {
+    public static ArrayList<Staff> getEmployees() {
         return employees;
     }
-
     public static ArrayList<Table> getTables() {
         return tables;
     }
-
-    @Override
-    public ArrayList<Menu> getMenus() {
+    public static ArrayList<Menu> getMenus() {
         return menus;
     }
-
-    @Override
-    public ArrayList<MenuSection> getMenuSections() {
+    public static ArrayList<MenuSection> getMenuSections() {
         return menuSections;
     }
-
     public static ArrayList<MenuItem> getMenuItems() {
         return menuItems;
     }

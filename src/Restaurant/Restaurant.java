@@ -1,8 +1,6 @@
 package Restaurant;
 
 import Human.Staff;
-
-
 import java.util.ArrayList;
 
 public interface Restaurant {
@@ -14,13 +12,4 @@ public interface Restaurant {
      ArrayList<Menu> menus=new ArrayList<>();
      ArrayList<MenuSection> menuSections=new ArrayList<>();
      ArrayList<MenuItem> menuItems=new ArrayList<>();
-
-
-
-     ArrayList<Staff> getEmployees() ;
-
-     ArrayList<Menu> getMenus();
-
-     ArrayList<MenuSection> getMenuSections();
-
 }

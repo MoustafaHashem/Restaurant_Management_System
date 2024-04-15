@@ -2,7 +2,6 @@ package Human;
 
 import java.time.LocalDate;
 
-
 public class  Staff extends Person {
     private static int count = 10;
     private final LocalDate joinedDate;
