@@ -72,7 +72,7 @@ public class Order {
             order.setCost(order.getCost()+mi.getPrice());
             System.out.println("meal added");
         }
-        System.out.println("order is cooked");
+        System.out.println("order is cooking");
         // add order to table
         Manager.getTables().get(y).addOrder(order);
         Thread.sleep(10000);

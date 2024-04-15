@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public interface Restaurant {
       String NAME="Gusteau";
       String LOCATION="France";
-      int stars=5;
+      int STARS=5;
      ArrayList<Staff> employees=new ArrayList<>();
      ArrayList<Table> tables=new ArrayList<>();
      ArrayList<Menu> menus=new ArrayList<>();

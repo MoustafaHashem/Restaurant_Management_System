@@ -11,7 +11,7 @@ public class Customer extends Person {
 
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
-    private double discount;
+    private double discount=0;
 
     public Customer(String name, int age, String address, String phone) {
         super(name, age, address, phone);

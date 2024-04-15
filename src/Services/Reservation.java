@@ -57,7 +57,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         reservations.remove(i);
         int x = Manager.getTables().size();
         int y;
-        for (y = 0; i < x; i++) {
+        for (y = 0; y < x; y++) {
             if (Manager.getTables().get(y).getReservation().getID() == id) {
                 Manager.getTables().get(y).removeReservation();
                 break;
@@ -98,13 +98,13 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
     }
     public  static void makeReservation(LocalDate d, int n, int tableNum){
         Scanner in=new Scanner(System.in);
-        System.out.println("name");
+        System.out.println("Enter name");
             String name=in.nextLine();
-        System.out.println("age");
+        System.out.println("Enter age");
             int age=in.nextInt();
-        System.out.println("address");
+        System.out.println("Enter address");
             String address=in.next();
-        System.out.println("phone");
+        System.out.println("Enter phone");
             String phone=in.next();
         Customer c=new Customer(name,age,address,phone);
         Reservation r = new Reservation(d,n);
@@ -116,7 +116,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             if (Manager.getTables().get(i).getTableNum() == tableNum){
                 if(Manager.getTables().get(i).isReserved())continue;
                 break;}
-            // if i =size throw exception handling
+            // if i =size throw exception handling enter another table
         }
         Manager.getTables().get(i).addReservation(r);
         c.checkIn();

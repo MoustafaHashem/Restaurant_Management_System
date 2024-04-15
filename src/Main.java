@@ -56,8 +56,5 @@ public class Main {
         Reservation.makeReservation(LocalDate.now(),3,1);
         Order.addOrder(1);
         Bill.payment(1);
-
-
-
     }
 }

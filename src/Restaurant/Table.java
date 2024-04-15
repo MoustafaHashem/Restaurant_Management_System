@@ -42,6 +42,7 @@ public class Table {
     }
     public void removeReservation() {
           this.reservation=null;
+          this.isReserved=false;
     }
 
     public void addReservation (Reservation reservation){
