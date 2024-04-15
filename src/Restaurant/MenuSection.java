@@ -16,5 +16,12 @@ private final Menu menu;
         this.title = title;
         this.menu = menu;
     }
+    public void print() {
+        menu.print();
+        System.out.println("MenuSection{"  +
+                "title='" + title + '\'' +
+                '}');
+    }
+
 
 }

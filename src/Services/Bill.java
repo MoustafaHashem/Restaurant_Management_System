@@ -10,7 +10,7 @@ public abstract class Bill extends Table {
     public static void payment(int tableNum){
         int x = Manager.getTables().size();
         int y;
-        for (y = 1; y <= x; y++) {
+        for (y = 0; y < x; y++) {
             if (tableNum == Manager.getTables().get(y).getTableNum()) break;
         }
 
@@ -21,6 +21,7 @@ public abstract class Bill extends Table {
         if (typeOfPay ==1) System.out.println("enter money");
         else if (typeOfPay ==2){
             Scanner scan = new Scanner(System.in);
+            System.out.println("enter password");
             int password = scan.nextInt();
             visa(password);
         }

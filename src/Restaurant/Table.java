@@ -47,4 +47,12 @@ public class Table {
     public void addOrder (Order order){
         this.order = order;
     }
+    public void print() {
+        System.out.println("Table{" +
+                "tableNum=" + tableNum +
+                ", isReserved=" + isReserved +
+                '}');
+    }
+
+
 }

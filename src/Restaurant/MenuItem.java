@@ -31,11 +31,21 @@ public class MenuItem {
         setPrice(p);
     }
 
-    public MenuSection getMenuSection() {
+    public MenuSection getMenuItem() {
         return menuSection;
     }
 
     public int getID() {
         return ID;
     }
+    public void print() {
+        menuSection.print();
+        System.out.println("MenuItem{" +
+            "title='" + title + '\'' +
+                    ", ID=" + ID +
+                    ", price=" + price +
+                    '}');
+    }
+
+
 }

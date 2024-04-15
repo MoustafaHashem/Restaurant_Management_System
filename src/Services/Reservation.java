@@ -91,9 +91,9 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         System.out.println("age");
             int age=in.nextInt();
         System.out.println("address");
-        String address=in.nextLine();
+            String address=in.next();
         System.out.println("phone");
-        String phone=in.next();
+            String phone=in.next();
         Customer c=new Customer(name,age,address,phone);
         Reservation r = new Reservation(d,n);
         reservations.add(r);
@@ -109,5 +109,6 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         Manager.getTables().get(i).addReservation(r);
         c.checkIn();
         Manager.getTables().get(i).setCustomer(c);
+        System.out.println("reservation done");
     }
 }

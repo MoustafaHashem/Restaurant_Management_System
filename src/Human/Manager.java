@@ -11,32 +11,31 @@ public class Manager extends Staff implements Restaurant {
     }
 
     public void addMenu(Menu m){getMenus().add(m);}
-    public void removeMenu(Menu m){
-        getMenus().remove(m);
-    }
+
     public void addMenuSection(MenuSection ms){
         getMenuSections().add(ms);
     }
-    public void removeMenuSection(MenuSection ms){
-        getMenuSections().remove(ms);
-    }
+
     public void addMenuItem(MenuItem mi){
         getMenuItems().add(mi);
     }
-    public void removeMenuItem(MenuItem mi){
-        getMenuItems().remove(mi);
-    }
+
     public void addTable(Table t){
         getTables().add(t);
     }
-    public void removeTable(Table t){
-        getTables().remove(t);
-    }
+
     public void addEmployee(Staff e){
         getEmployees().add(e);
     }
-    public void removeEmployee(Staff e){
-        getEmployees().remove(e);
+    public void removeEmployee(String id){
+        int size = getEmployees().size();
+        int i;
+        for (i = 0; i < size; i++) {
+            if (0 == getEmployees().get(i).getEmployeeID().compareTo(id))
+                break;
+        }
+        // if i = size exception handling
+        getEmployees().remove(i);
     }
 
     @Override
