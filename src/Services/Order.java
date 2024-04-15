@@ -68,11 +68,11 @@ public class Order {
         Scanner in = new Scanner(System.in);
             System.out.println("enter id for meal");
             MenuItem mi=addMeal(in.nextInt());
-            System.out.println("meal added");
            order.meals.add(mi);
-
             order.setCost(order.getCost()+mi.getPrice());
+            System.out.println("meal added");
         }
+        System.out.println("order is cooked");
         // add order to table
         Manager.getTables().get(y).addOrder(order);
         Thread.sleep(10000);
