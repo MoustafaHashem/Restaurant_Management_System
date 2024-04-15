@@ -12,7 +12,7 @@ public class Main {
         mousatafa.addEmployee(new Staff("micheal",21,"El-Marg City","01229082038","111111111",500,"low"));
         mousatafa.addEmployee(kemo);
         mousatafa.addMenu(new Menu("main menu"));
-        mousatafa.addMenuSection(new MenuSection(mousatafa.getMenus().get(0),"Grilled" ));
+        mousatafa.addMenuSection(new MenuSection(mousatafa.getMenus().get(0),"Grilled"));
         mousatafa.addMenuSection(new MenuSection(mousatafa.getMenus().get(0),"Fried" ));
         mousatafa.addMenuItem(new MenuItem(mousatafa.getMenuSections().get(0),"chicken",100));
         mousatafa.addMenuItem(new MenuItem(mousatafa.getMenuSections().get(0),"meat",150));
