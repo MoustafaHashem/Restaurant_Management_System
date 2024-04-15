@@ -1,50 +1,38 @@
 package Services;
 
-import Human.Customer;
+
+import Human.Manager;
 import Restaurant.Table;
 import java.util.Scanner;
 
-public class Bill extends Table {
-    private double bill;
-    // handle cost here and revise the class
-    private Customer customer;
-    private String paymentType;
+public abstract class Bill extends Table {
 
-    public Bill(String paymentType){
-        bill=0;
-        this.paymentType = paymentType;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public double getBill() {
-        return bill;
-    }
-
-    public String getPaymentType() {
-        return paymentType;
-    }
-
-    public void payment(String paymentType){
-        if (paymentType.equals("cash")){
-            cash(super.Order.getCost());
+    public static void payment(int tableNum){
+        int x = Manager.getTables().size();
+        int y;
+        for (y = 1; y <= x; y++) {
+            if (tableNum == Manager.getTables().get(y).getTableNum()) break;
         }
-        else if (paymentType.equals("visa")){
+
+        System.out.println("for cash press 1\nfor visa press2");
+        Scanner in=new Scanner(System.in);
+        int typeOfPay = in.nextInt();
+        System.out.println(" you should pay " +Manager.getTables().get(y).getOrder().getCost()+"after discount "+(Manager.getTables().get(y).getOrder().getCost()-Manager.getTables().get(y).getCustomer().getDiscount()));
+        if (typeOfPay ==1) System.out.println("enter money");
+        else if (typeOfPay ==2){
             Scanner scan = new Scanner(System.in);
             int password = scan.nextInt();
-            visa(password,super.Order.getCost());
+            visa(password);
         }
-        else{
-            System.out.println("invalide payment method");
+        else{ //exception handling
+            System.out.println("invalid payment method");
         }
+        Manager.getTables().get(y).getCustomer().checkOut();
+        System.out.println("Thank You For Coming Our Restaurant");
     }
-    public void cash(double c){
-        bill =c ;
-    }
-    public void visa (int password,double c){
-        bill = c;
+
+    public static void visa (int password){
+        System.out.println("the debited done ");
     }
 
 }

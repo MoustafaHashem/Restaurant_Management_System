@@ -1,6 +1,6 @@
 package Restaurant;
 
-import Restaurant.Menu;
+
 
 public class MenuSection {
     private final String title;

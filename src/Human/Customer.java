@@ -1,53 +1,60 @@
 package Human;
 
-import java.util.Date;
-import Services.Reservation;
-import Services.Order;
+import java.time.LocalDate;
+
+
+
 
 public class Customer extends Person {
     private static int count = 1;
     private final int customerId;
-    private Reservation reservation;
-    private Date checkInDate;
-    private Date checkOutDate;
 
-    public Customer(String name, int age, String address, int phone, Reservation reservation) {
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
+    private double discount;
+
+    public Customer(String name, int age, String address, int phone) {
         super(name, age, address, phone);
         this.customerId = count++;
-        this.reservation = reservation;
+        discount =0;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
     }
 
     public int getCustomerId() {
         return customerId;
     }
 
-    public Reservation getReservation() {
-        return reservation;
-    }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
-    }
 
-    public Date getCheckInDate() {
+
+
+    public LocalDate getCheckInDate() {
         return checkInDate;
     }
 
-    public Date getCheckOutDate() {
+    public LocalDate getCheckOutDate() {
         return checkOutDate;
     }
 
     @Override
     public void print() {
         super.print();
-        System.out.println("Customer{" + " customerId= " + customerId + ", reservation= " + reservation + '}');
+        System.out.println("Customer{" + " customerId= " + customerId );
     }
     public void checkIn() {
-        checkInDate = new Date();
+        checkInDate = LocalDate.now();
     }
 
     public void checkOut() {
-        checkOutDate = new Date();
+        checkOutDate = LocalDate.now();
+        setDiscount(discount+100);
     }
 
 

@@ -1,29 +1,13 @@
 package Services;
 
-import Human.Chief;
 import Restaurant.*;
 import Human.Manager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Order {
-    private final int  orderID;
-    private boolean isReady;
     private double cost;
-    private static int count=1;
-    private static ArrayList<MenuItem> meals=new ArrayList<>();
-
-    public int getOrderID() {
-        return orderID;
-    }
-
-    public boolean isReady() {
-        return isReady;
-    }
-
-    public void setReady(boolean ready) {
-        isReady = ready;
-    }
+    private final ArrayList<MenuItem> meals;
 
     public double getCost() {
         return cost;
@@ -33,56 +17,79 @@ public class Order {
         this.cost = cost;
     }
 
-    public static void setMeals(ArrayList<MenuItem> meals) {
-        Order.meals = meals;
+
+
+    public  ArrayList<MenuItem> getMeals() {
+        return meals;
     }
 
+
+
     public Order() {
-        this.orderID = count++;
-        this.isReady = false;
+
         this.cost = 0;
         this.meals = null;
     }
-    public static void addMeal(int ID){
+    public static MenuItem addMeal(int ID){
+
         int size = Manager.getMenuItems().size();
         int i;
         for (i = 0; i < size; i++) {
             if (Manager.getMenuItems().get(i).getID() == ID)
                 break;
         }
-        meals.add(Manager.getMenuItems().get(i));
-      //  cost += Manager.getMenuItems().get(i).getPrice();
+        return Manager.getMenuItems().get(i);
+
     }
-    public static void removeMeal(int ID){
+    public static MenuItem removeMeal(int ID){
         int size = Manager.getMenuItems().size();
         int i;
         for (i = 0; i < size; i++) {
             if (Manager.getMenuItems().get(i).getID() == ID)
                 break;
         }
-        meals.remove(Manager.getMenuItems().get(i));
-      //  cost -= Manager.getMenuItems().get(i).getPrice();
+        return Manager.getMenuItems().get(i);
+
     }
 
-    public static void addOrder(Table t) throws InterruptedException { // edit func to take int
-        int num = t.getReservation().getNumberOfPeoples();
+    public static void addOrder(int tableNum) throws InterruptedException { // edit func to take int
+        Order order=new Order();
+        int x = Manager.getTables().size();
+        int y;
+        for (y = 1; y <= x; y++) {
+            if (tableNum == Manager.getTables().get(y).getTableNum()) break;
+        }
+        int num = Manager.getTables().get(y).getReservation().getNumberOfPeoples();
         int i;
         for (i = 1; i <= num; i++) {
         System.out.println(num +"# order");
         Scanner in = new Scanner(System.in);
-        t.getOrder().addMeal(in.nextInt());
+            System.out.println("enter id for meal");
+            MenuItem mi=addMeal(in.nextInt());
+           order.meals.add(mi);
+            order.setCost(order.getCost()+mi.getPrice());
         }
         // add order to table
+        Manager.getTables().get(y).addOrder(order);
         Thread.sleep(10000);
-        Chief.prepareOrder(t); // edit chief to take int
     }
-    public static void modifyOrder(Table t, int oldMeal, int newMeal) { // edit func to take int
-        int num = t.getReservation().getNumberOfPeoples();
+    public static void modifyOrder(int tableNum, int oldMeal, int newMeal) { // edit func to take int
+        int x = Manager.getTables().size();
+        int y;
+        for (y = 1; y <= x; y++) {
+            if (tableNum == Manager.getTables().get(y).getTableNum()) break;
+        }
+        int num = Manager.getTables().get(y).getReservation().getNumberOfPeoples();
         int i;
         for (i = 1; i <= num; i++) {
-            if (oldMeal == meals.get(i).getID()) break;
+            if (oldMeal == Manager.getTables().get(y).getOrder().getMeals().get(i).getID()) {
+                break;
+            }
         }
-        meals.remove(i);
-        addMeal(newMeal);
+        Manager.getTables().get(y).getOrder().setCost(Manager.getTables().get(y).getOrder().getCost()-Manager.getTables().get(y).getOrder().getMeals().get(i).getPrice());
+        Manager.getTables().get(y).getOrder().getMeals().remove(i);
+        MenuItem mi=addMeal(newMeal);
+        Manager.getTables().get(y).getOrder().getMeals().add(mi);
+        Manager.getTables().get(y).getOrder().setCost(Manager.getTables().get(y).getOrder().getCost()+mi.getPrice());
     }
 }

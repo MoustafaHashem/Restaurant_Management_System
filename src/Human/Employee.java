@@ -1,10 +1,11 @@
 package Human;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Employee extends Person {
     private static int count = 10;
-    private Date joinedDate;
+    private final LocalDate joinedDate;
     private final String employeeID;
     private final String email;
     private String password;
@@ -13,16 +14,17 @@ public class Employee extends Person {
 
     public Employee(String name, int age, String address, int phone, String password, int salary, String rank) {
         super(name, age, address, phone);
-        this.employeeID = Integer.toString(joinedDate.getYear()) + Integer.toString(count);
+        this.joinedDate = LocalDate.now();
+        this.employeeID = joinedDate.getYear() + Integer.toString(count);
         this.email = employeeID+"@Gusteau.ASU";
         if (checkPassword(password)) this.password = password;
-        //Error
+        //Error exception handling
         this.salary = salary;
         this.rank = rank;
         count++;
     }
 
-    public Date getJoinedDate() {
+    public LocalDate getJoinedDate() {
         return joinedDate;
     }
 
@@ -61,10 +63,9 @@ public class Employee extends Person {
     @Override
         public void print() {
         super.print();
-        System.out.println("Employee{employeeID= " + employeeID + ", email= " + email + ", password= " + password + ", salary= " + salary + ", rank= " + rank + '}');
+        System.out.println("Employee{employeeID= " + employeeID + ", email= " + email + ", password= " + password + ", salary= " + salary + ", rank= " + rank + "joinedDate"+joinedDate+'}');
     }
     public static boolean checkPassword(String p) {
-        if (p.length() >= 8) return true;
-        return false;
+        return p.length() >= 8;
     }
 }

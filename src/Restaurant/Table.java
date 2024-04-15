@@ -1,15 +1,25 @@
 package Restaurant;
 
+import Human.Customer;
 import Services.Order;
 import Services.Reservation;
 
 public class Table {
-    protected Order Order;// why??
-    private int tableNum;
+
+    private final int tableNum;
     private static int count = 1;
     private boolean isReserved;
     protected Order order;
     private Reservation reservation;
+    private Customer customer;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Table(){
         this.tableNum = count++;
@@ -19,7 +29,7 @@ public class Table {
     public int getTableNum() {
         return tableNum;
     }
-    public boolean isReserverd(){
+    public boolean isReserved(){
         return isReserved;
     }
 
