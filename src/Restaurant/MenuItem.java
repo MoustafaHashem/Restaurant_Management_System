@@ -46,6 +46,4 @@ public class MenuItem {
                     ", price=" + price +
                     '}');
     }
-
-
 }

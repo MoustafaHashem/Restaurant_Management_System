@@ -11,10 +11,6 @@ public class Menu {
         this.title = title;
     }
     public void print() {
-        System.out.println("Menu{" +
-                "title='" + title + '\'' +
-                '}');
+        System.out.println("Menu{" + "title='" + title + '}');
     }
-
-
 }

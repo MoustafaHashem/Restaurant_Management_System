@@ -22,6 +22,4 @@ private final Menu menu;
                 "title='" + title + '\'' +
                 '}');
     }
-
-
 }
