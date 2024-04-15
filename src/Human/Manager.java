@@ -8,23 +8,30 @@ public class Manager extends Staff implements Restaurant {
         super(name, age, address, phone, password, salary, rank);
     }
 
+    @Override
     public void addMenu(Menu m){getMenus().add(m);}
 
+    @Override
     public void addMenuSection(MenuSection ms){
         getMenuSections().add(ms);
     }
 
+    @Override
     public void addMenuItem(MenuItem mi){
         getMenuItems().add(mi);
     }
 
+    @Override
     public void addTable(Table t){
         getTables().add(t);
     }
 
+    @Override
     public void addEmployee(Staff e){
         getEmployees().add(e);
     }
+
+    @Override
     public void removeEmployee(String id){
         int size = getEmployees().size();
         int i;

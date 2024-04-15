@@ -12,4 +12,11 @@ public interface Restaurant {
      ArrayList<Menu> menus=new ArrayList<>();
      ArrayList<MenuSection> menuSections=new ArrayList<>();
      ArrayList<MenuItem> menuItems=new ArrayList<>();
+
+    public void addMenu(Menu m);
+    public void addMenuSection(MenuSection ms);
+    public void addMenuItem(MenuItem mi);
+    public void addTable(Table t);
+    public void addEmployee(Staff e);
+    public void removeEmployee(String id);
 }
