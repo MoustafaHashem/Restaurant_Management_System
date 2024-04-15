@@ -1,10 +1,8 @@
 package Restaurant;
 
-
-
 public class MenuSection {
     private final String title;
-private final Menu menu;
+    private final Menu menu;
     public Menu getMenu() {
         return menu;
     }
@@ -18,8 +16,6 @@ private final Menu menu;
     }
     public void print() {
         menu.print();
-        System.out.println("MenuSection{"  +
-                "title='" + title + '\'' +
-                '}');
+        System.out.println("MenuSection{"  + "title= " + title + '}');
     }
 }
