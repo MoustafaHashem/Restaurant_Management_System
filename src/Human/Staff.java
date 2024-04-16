@@ -57,7 +57,8 @@ public class  Staff extends Person {
             int x=Manager.getEmployees().get(i).getEmployeeID().compareTo(id);
           if(x==0)break;
         }
-
+              // exception handling
+        Manager.getEmployees().get(i).salary=salary;
     }
 
 
