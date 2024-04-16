@@ -103,8 +103,8 @@ public class Manager extends Staff implements Restaurant {
             }
             if(idExists)
             {
-                getEmployees().remove(i);
                 System.out.println("Employee "+getEmployees().get(i).getName() +" whose ID is: "+id+" has been removed successfully");
+                getEmployees().remove(i);
                 System.out.println("Do you wish to remove another employee (YES/NO)?");
                 continueInput=input.next();
             }
