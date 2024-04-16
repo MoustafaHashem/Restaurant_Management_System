@@ -126,6 +126,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             }
         if (!availableTables.isEmpty())
         {
+            System.out.println("Let's start making your reservation :)");
             System.out.println("Enter name: ");
             String name=in.nextLine();
             System.out.println("Enter age: ");
