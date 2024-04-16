@@ -13,13 +13,13 @@ public class Reservation {
 private  int reservationId;
 private static int count=0;
 private LocalDate date;
-private int numberOfPeoples;
+private int numberOfPeople;
 private final static ArrayList<Reservation> reservations=new ArrayList<>();
 
-    public Reservation(LocalDate date, int numberOfPeoples) {
+    public Reservation(LocalDate date, int numberOfPeople) {
         this.reservationId=++count;
         this.date = date;
-        this.numberOfPeoples = numberOfPeoples;
+        this.numberOfPeople = numberOfPeople;
     }
 
 
@@ -36,17 +36,16 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         this.date = date;
     }
 
-
     public int getNumberOfPeople() {
-        return numberOfPeoples;
+        return numberOfPeople;
     }
 
     public void setID(int ID) {
         this.reservationId = ID;
     }
 
-    public void setNumberOfPeoples(int numberOfPeoples) {
-        this.numberOfPeoples = numberOfPeoples;
+    public void setnumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
     }
     public static void cancelReservation(){
         Scanner input= new Scanner(System.in);
@@ -97,7 +96,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             if (reservations.get(i).getReservationId() == id)
                 break;
         }
-        reservations.get(i).setNumberOfPeoples(n);
+        reservations.get(i).setnumberOfPeople(n);
         System.out.println("changed");
     }
     public  static void changeReservation(int id,LocalDate d,int n){
@@ -107,7 +106,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             if (reservations.get(i).getReservationId() == id)
                 break;
         }
-        reservations.get(i).setNumberOfPeoples(n);
+        reservations.get(i).setnumberOfPeople(n);
         reservations.get(i).setDate(d);
         System.out.println("changed");
     }
@@ -176,12 +175,14 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             System.out.println("************************************************************");
         }
     }
-    public void printReservation()
+    public static void printReservation()
     {
         for(Reservation r: reservations)
         {
             System.out.println("Reservation ID: "+r.getReservationId());
             System.out.println("Number of people: "+r.getNumberOfPeople());
+            System.out.println("Reservation date: "+ r.getDate());
+            System.out.println("************************************************************");
         }
     }
 }
