@@ -1,6 +1,7 @@
 package Human;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 
 public class  Staff extends Person {
@@ -51,22 +52,38 @@ public class  Staff extends Person {
     }
 
     //Manager only can set salary
-    public  void setSalary(String id,double salary) {
-        if(this instanceof Manager)
-        {
-            int i;
-            for(i=0;i<Manager.getEmployees().size();i++) {
-                int x=Manager.getEmployees().get(i).getEmployeeID().compareTo(id);
-                if(x==0)break;
+    public  void setSalary(double salary) {
+        Scanner in = new Scanner(System.in);
+        boolean invalidId = true;
+        String continueInput="";
+
+            if (this instanceof Manager) {
+                do {
+                System.out.println("Enter ID of employee to set salary: ");
+                String id= in.next();
+                int i;
+                for (i = 0; i < Manager.getEmployees().size(); i++) {
+                    if (Manager.getEmployees().get(i).getEmployeeID().equals(id)) {
+                        invalidId = false;
+                    }
+                }
+                if (invalidId) {
+                    Manager.getEmployees().get(i).salary = salary;
+                    System.out.println("Salary of employee "+ Manager.getEmployees().get(i).getName()+" is now: "+Manager.getEmployees().get(i).getSalary());
+                    System.out.println("************************************************************");
+                } else {
+                    System.out.println("Entered ID doesn't belong to an existing employee");
+                    System.out.println("Do you wish to re-try entering the ID (YES/NO)?");
+                    continueInput=in.next();
+                    System.out.println("************************************************************");
+                }
+                }while(invalidId && continueInput.equalsIgnoreCase("YES"));
             }
-            // exception handling
-            Manager.getEmployees().get(i).salary=salary;
-        }
-        else
-        {
-            System.out.println("You don't have an access to change salaries of Staff");
-            return;
-        }
+            else {
+                System.out.println("You don't have an access to change salaries of Staff");
+                System.out.println("************************************************************");
+                return;
+            }
 
     }
 
