@@ -99,18 +99,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
     }
     public  static void makeReservation(LocalDate d, int n){
         Scanner in=new Scanner(System.in);
-        System.out.println("Enter name: ");
-            String name=in.nextLine();
-        System.out.println("Enter age: ");
-            int age=in.nextInt();
-        System.out.println("Enter address: ");
-            String address=in.next();
-        System.out.println("Enter phone: ");
-            String phone=in.next();
-        Customer c = new Customer(name,age,address,phone);
-        Reservation r = new Reservation(d,n);
-        reservations.add(r);
-        System.out.println("Reservation ID:  "+r.getID());
+
         int size = Manager.getTables().size();
         int i;
         ArrayList <Table> availableTables = new ArrayList<>();
@@ -124,6 +113,18 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             }
         if (!availableTables.isEmpty())
         {
+            System.out.println("Enter name: ");
+            String name=in.nextLine();
+            System.out.println("Enter age: ");
+            int age=in.nextInt();
+            System.out.println("Enter address: ");
+            String address=in.next();
+            System.out.println("Enter phone: ");
+            String phone=in.next();
+            Customer c = new Customer(name,age,address,phone);
+            Reservation r = new Reservation(d,n);
+            reservations.add(r);
+            System.out.println("Reservation ID:  "+r.getID());
             System.out.println("************************************************************");
             System.out.println("Available tables for making a reservation: ");
             for(Table table:availableTables)
