@@ -40,8 +40,10 @@ public class  Staff extends Person {
     }
 
     public void setPassword(String password) {
-        if (checkPassword(password))this.password = password;
-       // else "exception handling";
+        if (checkPassword(password))
+            this.password = password;
+       else
+            System.out.println("Password must be 8 characters or more\n");
     }
 
     public double getSalary() {
