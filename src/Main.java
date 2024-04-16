@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Manager mousatafa=new Manager("Moustafa",20,"El-Obour City","01097963663","123456789",10000,"High");
+        Manager mousatafa=new Manager("Moustafa",20,"El-Obour City","01097963663",10000,"High");
         Staff kemo=new Staff("kareem",21,"Faisal City","01115393580", 1000,"medium");
         mousatafa.addEmployee(new Staff("micheal",21,"El-Marg City","01229082038", 500,"low"));
         mousatafa.addEmployee(kemo);
