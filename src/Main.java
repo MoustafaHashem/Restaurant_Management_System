@@ -35,22 +35,23 @@ public class Main {
         for (int i=0;i<mousatafa.getEmployees().size();i++) {
             mousatafa.getEmployees().get(i).print();
         }
-        System.out.println("************************************************************");
-        for (int i=0;i<mousatafa.getMenus().size();i++) {
-            mousatafa.getMenus().get(i).print();
-        }
-        System.out.println("************************************************************");
-        for (int i=0;i<mousatafa.getMenuSections().size();i++) {
-            mousatafa.getMenuSections().get(i).print();
-        }
-        System.out.println("************************************************************");
-        for (int i=0;i<mousatafa.getMenuItems().size();i++) {
-            mousatafa.getMenuItems().get(i).print();
-        }
-        System.out.println("************************************************************");
+
+//        for (int i=0;i<mousatafa.getMenus().size();i++) {
+//            mousatafa.getMenus().get(i).print();
+//        }
+//        System.out.println("************************************************************");
+//        for (int i=0;i<mousatafa.getMenuSections().size();i++) {
+//            mousatafa.getMenuSections().get(i).print();
+//        }
+//        System.out.println("************************************************************");
+//        for (int i=0;i<mousatafa.getMenuItems().size();i++) {
+//            mousatafa.getMenuItems().get(i).print();
+//        }
+//        System.out.println("************************************************************");
             Reservation.makeReservation(LocalDate.now(),1);
-            Order.addOrder(1);
-            Bill.payment(1);
-        System.out.println("hey");
+//            Order.addOrder(1);
+//            Bill.payment(1);
+       Reservation.cancelReservation();
+
     }
 }

@@ -37,7 +37,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
     }
 
 
-    public int getNumberOfPeoples() {
+    public int getNumberOfPeople() {
         return numberOfPeoples;
     }
 
@@ -174,6 +174,14 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         {
             System.out.println("No available tables for making a reservation at the restaurant at the moment");
             System.out.println("************************************************************");
+        }
+    }
+    public void printReservation()
+    {
+        for(Reservation r: reservations)
+        {
+            System.out.println("Reservation ID: "+r.getReservationId());
+            System.out.println("Number of people: "+r.getNumberOfPeople());
         }
     }
 }

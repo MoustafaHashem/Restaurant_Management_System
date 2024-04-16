@@ -13,6 +13,9 @@ public class Table {
     private Reservation reservation;
     private Customer customer;
 
+    public void setIsReserved(boolean isReserved){
+        this.isReserved=isReserved;
+    }
     public Customer getCustomer() {
         return customer;
     }
