@@ -112,6 +112,7 @@ public class Manager extends Staff implements Restaurant {
                 System.out.println("The entered ID doesn't belong to an existing employee");
                 System.out.println("Do you wish to re-try entering the ID of the employee desired to be removed (YES/NO)?");
                 continueInput=input.next();
+                System.out.println("************************************************************");
             }
         }while(continueInput.equalsIgnoreCase("YES"));
 
