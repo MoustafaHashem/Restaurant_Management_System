@@ -141,12 +141,13 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             System.out.println("Reservation ID:  "+r.getReservationId());
             System.out.println("************************************************************");
             System.out.println("Available tables for making a reservation: ");
+            System.out.println();
             for(Table table:availableTables)
             {
-                System.out.println("\nTable "+ table.getTableNum());
+                System.out.println("Table "+ table.getTableNum());
             }
             do {
-                System.out.println("Which table do you want to make your reservation?");
+                System.out.println("\nWhich table do you want to make your reservation?");
                 wantedTable = in.nextInt();
                 for (Table table:availableTables) {
                     if (table.getTableNum() == wantedTable) {
@@ -159,6 +160,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
                     Manager.getTables().get(wantedTable).addReservation(r);
                     c.checkIn();
                     Manager.getTables().get(wantedTable).setCustomer(c);
+                    Manager.getTables().get(wantedTable).setIsReserved(true);
                     System.out.println("Reservation done successfully");
                     System.out.println("************************************************************");
                 }
