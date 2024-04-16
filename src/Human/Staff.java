@@ -54,8 +54,9 @@ public class  Staff extends Person {
     public void setSalary(double salary) {
         if(this instanceof Manager)
         this.salary = salary;
-        else
-        System.out.println("You don't have an access to change salaries of Staff");
+        else {
+            System.out.println("You don't have an access to change salaries of Staff");
+        }
     }
 
 
