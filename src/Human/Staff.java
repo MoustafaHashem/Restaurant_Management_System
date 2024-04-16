@@ -2,16 +2,17 @@ package Human;
 
 import java.time.LocalDate;
 
+
 public class  Staff extends Person {
     private static int count = 10;
     private final LocalDate joinedDate;
     private final String employeeID;
     private final String email;
     private String password;
-    private int salary;
+    private double salary;
     private String rank;
 
-    public Staff(String name, int age, String address, String phone, int salary, String rank) {
+    public Staff(String name, int age, String address, String phone, double salary, String rank) {
         super(name, age, address, phone);
         this.joinedDate = LocalDate.now();
         this.employeeID = joinedDate.getYear() + Integer.toString(count);
@@ -43,13 +44,18 @@ public class  Staff extends Person {
        // else "exception handling";
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    //Manager only can set salary
+    public void setSalary(double salary) {
+        if(this instanceof Manager)
         this.salary = salary;
-    }// for manger only
+        else
+        System.out.println("You don't have an access to change salaries of employees");
+    }
+
 
     public String getRank() {
         return rank;
@@ -62,7 +68,7 @@ public class  Staff extends Person {
     @Override
         public void print() {
         super.print();
-        System.out.println("Employee{employeeID= " + employeeID + ", email= " + email + ", password= " + password + ", salary= " + salary + ", rank= " + rank + "joinedDate"+joinedDate+'}');
+        System.out.println("\nEmployee ID: " + employeeID + "\nEmail: " + email + "\nPassword: " + password + "\nSalary: " + salary + "\nRank: " + rank + "\nJoinedDate: "+joinedDate+"\n");
     }
     public static boolean checkPassword(String p) {
         return p.length() >= 8;

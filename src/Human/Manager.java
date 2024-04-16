@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Manager extends Staff implements Restaurant {
-    public Manager(String name, int age, String address, String phone, int salary, String rank ) {
+    public Manager(String name, int age, String address, String phone, double salary, String rank ) {
         super(name, age, address, phone, salary, rank);
     }
 
@@ -24,6 +24,7 @@ public class Manager extends Staff implements Restaurant {
     public static ArrayList<MenuItem> getMenuItems() {
         return menuItems;
     }
+
 
     //Adding a new menu
     @Override
