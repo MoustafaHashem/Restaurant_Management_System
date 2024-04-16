@@ -9,6 +9,9 @@ public class Order {
     private double cost=0;
     private final ArrayList<MenuItem> meals=new ArrayList<>();
 
+    public Order() {
+    }
+
     public double getCost() {
         return cost;
     }
@@ -80,6 +83,7 @@ public class Order {
     }
 
     public static void addOrder(int tableNum) throws InterruptedException { // edit func to take int
+
         Order order=new Order();
         //System.out.println("check 1");
            int y = searchTableNum(tableNum);

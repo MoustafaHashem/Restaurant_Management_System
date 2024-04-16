@@ -51,15 +51,12 @@ public class Main {
         System.out.println("---------------------------------------------------------------------------------");
             Reservation.makeReservation(LocalDate.now(),1);
             Reservation.cancelReservation();
-        //System.out.println("test"+Order.test());
-        /*
-        try{
-                Order.addOrder();
-            }catch(InputMismatchException e){
+            try{
+                Order.addOrder(1);
+            } catch(InputMismatchException e){
                 System.out.println("Invalid input: please enter an integer");
-                }
-         */
-          //  Bill.payment(1);
+            }
+        //Bill.payment(1);
         System.out.println("hey");
     }
 }
