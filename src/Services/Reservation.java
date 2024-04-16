@@ -2,6 +2,7 @@ package Services;
 
 import Human.Customer;
 import Human.Manager;
+import Restaurant.Table;
 
 
 import java.time.LocalDate;
@@ -96,31 +97,66 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         reservations.get(i).setDate(d);
         System.out.println("changed");
     }
-    public  static void makeReservation(LocalDate d, int n, int tableNum){
+    public  static void makeReservation(LocalDate d, int n){
         Scanner in=new Scanner(System.in);
-        System.out.println("Enter name");
+        System.out.println("Enter name: ");
             String name=in.nextLine();
-        System.out.println("Enter age");
+        System.out.println("Enter age: ");
             int age=in.nextInt();
-        System.out.println("Enter address");
+        System.out.println("Enter address: ");
             String address=in.next();
-        System.out.println("Enter phone");
+        System.out.println("Enter phone: ");
             String phone=in.next();
-        Customer c=new Customer(name,age,address,phone);
+        Customer c = new Customer(name,age,address,phone);
         Reservation r = new Reservation(d,n);
         reservations.add(r);
-        System.out.println("reservationID = "+r.getID());
+        System.out.println("Reservation ID:  "+r.getID());
         int size = Manager.getTables().size();
         int i;
+        ArrayList <Table> availableTables = new ArrayList<>();
+        int wantedTable;
+        boolean invalidTable=true;
         for (i = 0; i < size; i++) {
-            if (Manager.getTables().get(i).getTableNum() == tableNum){
-                if(Manager.getTables().get(i).isReserved())continue;
-                break;}
-            // if i =size throw exception handling enter another table
+                if(!Manager.getTables().get(i).isReserved())
+                {
+                    availableTables.add(Manager.getTables().get(i));
+                }
+            }
+        if (!availableTables.isEmpty())
+        {
+            System.out.println("************************************************************");
+            System.out.println("Available tables for making a reservation: ");
+            for(Table table:availableTables)
+            {
+                System.out.println("\nTable "+ table.getTableNum());
+            }
+            do {
+                System.out.println("Which table do you want to make your reservation?");
+                wantedTable = in.nextInt();
+                for (Table table:availableTables) {
+                    if (table.getTableNum() == wantedTable) {
+                        invalidTable = false;
+                        break;
+                    }
+                }
+                if(!invalidTable)
+                {
+                    Manager.getTables().get(wantedTable).addReservation(r);
+                    c.checkIn();
+                    Manager.getTables().get(wantedTable).setCustomer(c);
+                    System.out.println("Reservation done successfully");
+                    System.out.println("************************************************************");
+                }
+                else {
+                    System.out.println("Please enter a valid table number from the available tables listed above");
+                }
+            }while(invalidTable);
+
         }
-        Manager.getTables().get(i).addReservation(r);
-        c.checkIn();
-        Manager.getTables().get(i).setCustomer(c);
-        System.out.println("reservation done");
+        else
+        {
+            System.out.println("No available tables for making a reservation at the restaurant at the moment");
+            System.out.println("************************************************************");
+        }
     }
 }
