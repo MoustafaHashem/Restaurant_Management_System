@@ -52,6 +52,8 @@ public class Main {
 //            Order.addOrder(1);
 //            Bill.payment(1);
        Reservation.cancelReservation();
-
+       Reservation.printReservation();
+//       kemo.setSalary(1000);
+       kemo.setRank("manager");
     }
 }

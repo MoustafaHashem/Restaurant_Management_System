@@ -80,6 +80,12 @@ public class  Staff extends Person {
         System.out.println("Employee ID: " + employeeID + "\nEmail: " + email + "\nPassword: " + password + "\nSalary: " + salary + "\nRank: " + rank + "\nJoinedDate: "+joinedDate);
         System.out.println("************************************************************");
     }
+    public void printAllEmployees() {
+        for(Staff employee:Manager.getEmployees()) {
+            System.out.println("Employee ID: " + employeeID + "\nEmail: " + email + "\nPassword: " + password + "\nSalary: " + salary + "\nRank: " + rank + "\nJoinedDate: " + joinedDate);
+            System.out.println("************************************************************");
+        }
+    }
     public static boolean checkPassword(String p) {
         return p.length() >= 8;
     }
