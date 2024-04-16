@@ -76,6 +76,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             }
             else {
                 System.out.println("Entered Reservation ID not valid");
+                System.out.println("************************************************************");
             }
         }
         }while(invalidReservation);
@@ -111,9 +112,9 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         reservations.get(i).setDate(d);
         System.out.println("changed");
     }
-    public  static void makeReservation(LocalDate d, int n){
+    public static void makeReservation(LocalDate d, int n){
         Scanner in=new Scanner(System.in);
-
+        Reservation r;
         int size = Manager.getTables().size();
         int i;
         ArrayList <Table> availableTables = new ArrayList<>();
@@ -137,7 +138,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             System.out.println("Enter phone: ");
             String phone=in.next();
             Customer c = new Customer(name,age,address,phone);
-            Reservation r = new Reservation(d,n);
+             r = new Reservation(d,n);
             reservations.add(r);
             System.out.println("Reservation ID:  "+r.getReservationId());
             System.out.println("************************************************************");
@@ -163,6 +164,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
                     Manager.getTables().get(wantedTable).setCustomer(c);
                     Manager.getTables().get(wantedTable).setIsReserved(true);
                     System.out.println("Reservation done successfully");
+                    System.out.println("Your Reservation ID is: "+ r.getReservationId());
                     System.out.println("************************************************************");
                 }
                 else {
