@@ -14,7 +14,7 @@ private  int reservationId;
 private static int count=0;
 private LocalDate date;
 private int numberOfPeople;
-private final static ArrayList<Reservation> reservations=new ArrayList<>();
+private  static ArrayList<Reservation> reservations=new ArrayList<>();
 
     public Reservation(LocalDate date, int numberOfPeople) {
         this.reservationId=++count;
@@ -22,7 +22,9 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         this.numberOfPeople = numberOfPeople;
     }
 
-
+    public static ArrayList<Reservation> getReservations() {
+        return reservations;
+    }
 
     public int getReservationId() {
         return reservationId;

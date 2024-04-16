@@ -51,14 +51,23 @@ public class  Staff extends Person {
     }
 
     //Manager only can set salary
-    public static void setSalary(String id,double salary) {
-        int i;
-        for(i=0;i<Manager.getEmployees().size();i++) {
-            int x=Manager.getEmployees().get(i).getEmployeeID().compareTo(id);
-          if(x==0)break;
+    public  void setSalary(String id,double salary) {
+        if(this instanceof Manager)
+        {
+            int i;
+            for(i=0;i<Manager.getEmployees().size();i++) {
+                int x=Manager.getEmployees().get(i).getEmployeeID().compareTo(id);
+                if(x==0)break;
+            }
+            // exception handling
+            Manager.getEmployees().get(i).salary=salary;
         }
-              // exception handling
-        Manager.getEmployees().get(i).salary=salary;
+        else
+        {
+            System.out.println("You don't have an access to change salaries of Staff");
+            return;
+        }
+
     }
 
 
