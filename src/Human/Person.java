@@ -46,6 +46,6 @@ public class Person {
     }
 
     public void print() {
-        System.out.println("Person{name= " + name + ", age= " + age + ", address= " + address + ", phone= " + phone + '}');
+        System.out.println("Name: " + name + "\nAge: " + age + "\nAddress: " + address + "\nPhone: " + phone+"\n");
     }
 }

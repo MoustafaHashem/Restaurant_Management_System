@@ -27,7 +27,7 @@ public class Customer extends Person {
     @Override
     public void print() {
         super.print();
-        System.out.println("Customer{" + " customerId= " + customerId );
+        System.out.println("\nCustomer_Id: " + customerId );
     }
 
     public void checkIn() {
