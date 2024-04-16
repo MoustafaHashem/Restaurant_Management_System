@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reservation {
-private  int ID;
+private  int reservationId;
 private static int count=0;
 private LocalDate date;
 private int numberOfPeoples;
 private final static ArrayList<Reservation> reservations=new ArrayList<>();
 
     public Reservation(LocalDate date, int numberOfPeoples) {
-        this.ID=++count;
+        this.reservationId=++count;
         this.date = date;
         this.numberOfPeoples = numberOfPeoples;
     }
@@ -24,7 +24,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
 
 
     public int getID() {
-        return ID;
+        return reservationId;
     }
 
     public LocalDate getDate() {
@@ -41,7 +41,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.reservationId = ID;
     }
 
     public void setNumberOfPeoples(int numberOfPeoples) {

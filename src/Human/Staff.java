@@ -76,6 +76,7 @@ public class  Staff extends Person {
         public void print() {
         super.print();
         System.out.println("\nEmployee ID: " + employeeID + "\nEmail: " + email + "\nPassword: " + password + "\nSalary: " + salary + "\nRank: " + rank + "\nJoinedDate: "+joinedDate+"\n");
+        System.out.println("************************************************************");
     }
     public static boolean checkPassword(String p) {
         return p.length() >= 8;
