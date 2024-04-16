@@ -25,47 +25,33 @@ public class Manager extends Staff implements Restaurant {
         return menuItems;
     }
 
-    public Table searchTable(int tableNumber){
-        //Code option1:
-    //        int size=this.getTables().size();
-    //        for(int i=0;i<size;i++)
-    //        {
-    //            if(tableNumber==this.getTables().get(i).getTableNum())
-    //                return this.getTables().get(i);
-    //        }
-    //        return null;
-        //Code option2:
-        for(Table table: this.getTables())
-        {
-            if(table.getTableNum()==tableNumber)
-                return table;
-        }
-        return null;
-    }
     //under progress
-//    public Table searchMenuItem(int tableNumber) {
+//    public Table searchTable(int tableNumber){
+//        //Code option1:
+//    //        int size=this.getTables().size();
+//    //        for(int i=0;i<size;i++)
+//    //        {
+//    //            if(tableNumber==this.getTables().get(i).getTableNum())
+//    //                return this.getTables().get(i);
+//    //        }
+//    //        return null;
+//        //Code option2:
 //        for(Table table: this.getTables())
 //        {
 //            if(table.getTableNum()==tableNumber)
 //                return table;
 //        }
 //        return null;
+//    }
+
+//    public Table searchMenuItem(int tableNumber) {
+//
 //    }
 //    public Table searchMenuSection(int tableNumber) {
-//        for(Table table: this.getTables())
-//        {
-//            if(table.getTableNum()==tableNumber)
-//                return table;
-//        }
-//        return null;
+//
 //    }
 //    public Table searchEmployee(int tableNumber) {
-//        for(Table table: this.getTables())
-//        {
-//            if(table.getTableNum()==tableNumber)
-//                return table;
-//        }
-//        return null;
+//
 //    }
 
     //Adding a new menu
