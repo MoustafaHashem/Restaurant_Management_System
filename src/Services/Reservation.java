@@ -65,13 +65,21 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
             }
             if(!invalidReservation)
             {
-
+                System.out.println("test "+Manager.getTables().get(4).getReservation().reservationId);
+                for (int j=0;j < Manager.tables.size();j++) {
+                    if (id == Manager.getTables().get(j).getReservation().reservationId) {
+                        Manager.getTables().get(j).removeReservation();
+                        break;
+                    }
+                }
+/*
                 for (Table table: Manager.getTables()) {
                     if (table.getReservation().getReservationId() == id) {
                         table.removeReservation();
                         break;
                     }
                 }
+                */
                 reservations.remove(i);
                 System.out.println("Reservation cancelled");
                 System.out.println("************************************************************");
@@ -162,10 +170,10 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
                 }
                 if(!invalidTable)
                 {
-                    Manager.getTables().get(wantedTable).addReservation(r);
+                    Manager.getTables().get(wantedTable-1).addReservation(r);
                     c.checkIn();
-                    Manager.getTables().get(wantedTable).setCustomer(c);
-                    Manager.getTables().get(wantedTable).setIsReserved(true);
+                    Manager.getTables().get(wantedTable-1).setCustomer(c);
+                    Manager.getTables().get(wantedTable-1).setIsReserved(true);
                     System.out.println("Reservation done successfully");
                     System.out.println("Your Reservation ID is: "+ r.getReservationId());
                     System.out.println("************************************************************");
@@ -182,6 +190,7 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
             System.out.println("************************************************************");
         }
     }
+
     public static void printReservation()
     {
         for(Reservation r: reservations)

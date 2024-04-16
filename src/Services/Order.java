@@ -85,7 +85,7 @@ public class Order {
            int y = searchTableNum(tableNum);
 
        // System.out.println("find table");
-        int num = Manager.getTables().get(y).getReservation().getNumberOfPeople();
+        int num = Manager.getTables().get(2).getReservation().getNumberOfPeople();
         int i;
         for (i = 1; i <= num; i++) {
         System.out.println(i +"# order");
@@ -109,7 +109,7 @@ public class Order {
     }
     public static void modifyOrder(int tableNum, int oldMeal, int newMeal) { // edit func to take int
         int y = searchTableNum(tableNum);
-        int num = Manager.getTables().get(y).getReservation().getNumberOfPeople();
+        int num = Manager.getTables().get(2).getReservation().getNumberOfPeople();
         int i;
         for (i = 1; i <= num; i++) {
             if (oldMeal == Manager.getTables().get(y).getOrder().getMeals().get(i).getID()) {
