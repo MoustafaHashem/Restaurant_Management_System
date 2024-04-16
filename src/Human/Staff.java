@@ -53,7 +53,7 @@ public class  Staff extends Person {
         if(this instanceof Manager)
         this.salary = salary;
         else
-        System.out.println("You don't have an access to change salaries of employees");
+        System.out.println("You don't have an access to change salaries of Staff");
     }
 
 
@@ -61,9 +61,13 @@ public class  Staff extends Person {
         return rank;
     }
 
+    //Manager only can set rank
     public void setRank(String rank) {
+        if(this instanceof Manager)
         this.rank = rank;
-    }// for manger only
+        else
+            System.out.println("You don't have an access to change ranks of Staff");
+    }
 
     @Override
         public void print() {
