@@ -17,5 +17,5 @@ public interface Restaurant {
      void addMenuItem(MenuItem mi);
      void addTable(Table t);
      void addEmployee(Staff e);
-     void removeEmployee(String id);
+     void removeEmployee();
 }

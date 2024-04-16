@@ -31,7 +31,7 @@ public class Main {
         for (int i=0;i<mousatafa.getEmployees().size();i++) {
             mousatafa.getEmployees().get(i).print();
         }
-        mousatafa.removeEmployee("202411");
+        mousatafa.removeEmployee();
         for (int i=0;i<mousatafa.getEmployees().size();i++) {
             mousatafa.getEmployees().get(i).print();
         }
