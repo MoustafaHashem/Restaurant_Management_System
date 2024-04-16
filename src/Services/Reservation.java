@@ -24,7 +24,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
 
 
 
-    public int getID() {
+    public int getReservationId() {
         return reservationId;
     }
 
@@ -48,29 +48,43 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
     public void setNumberOfPeoples(int numberOfPeoples) {
         this.numberOfPeoples = numberOfPeoples;
     }
-    public static void cancelReservation(int id){
+    public static void cancelReservation(){
+        Scanner input= new Scanner(System.in);
         int size = reservations.size();
         int i;
+        boolean invalidReservation = true;
+        int id= input.nextInt();
+        do {
+            System.out.println("Enter ID of Reservation to be cancelled: ");
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
-                break;
-        }
-        reservations.remove(i);
-        int x = Manager.getTables().size();
-        int y;
-        for (y = 0; y < x; y++) {
-            if (Manager.getTables().get(y).getReservation().getID() == id) {
-                Manager.getTables().get(y).removeReservation();
+            if (reservations.get(i).getReservationId() == id)
+            {
+                invalidReservation=false;
+            }
+            if(!invalidReservation)
+            {
+                reservations.remove(i);
+                for (Table table: Manager.getTables()) {
+                    if (table.getReservation().getReservationId() == id) {
+                        table.removeReservation();
+                        break;
+                    }
+                }
+                System.out.println("Reservation cancelled");
+                System.out.println("************************************************************");
                 break;
             }
+            else {
+                System.out.println("Entered Reservation ID not valid");
+            }
         }
-        System.out.println("cancelled");
+        }while(invalidReservation);
     }
     public static void changeReservation(int id,LocalDate d){
         int size = reservations.size(); // if size =0 throw exception
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id){
+            if (reservations.get(i).getReservationId() == id){
                 break;}
         }
         reservations.get(i).setDate(d);
@@ -80,7 +94,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         int size = reservations.size();
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
+            if (reservations.get(i).getReservationId() == id)
                 break;
         }
         reservations.get(i).setNumberOfPeoples(n);
@@ -90,7 +104,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
         int size = reservations.size();
         int i;
         for (i = 0; i < size; i++) {
-            if (reservations.get(i).getID() == id)
+            if (reservations.get(i).getReservationId() == id)
                 break;
         }
         reservations.get(i).setNumberOfPeoples(n);
@@ -124,7 +138,7 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             Customer c = new Customer(name,age,address,phone);
             Reservation r = new Reservation(d,n);
             reservations.add(r);
-            System.out.println("Reservation ID:  "+r.getID());
+            System.out.println("Reservation ID:  "+r.getReservationId());
             System.out.println("************************************************************");
             System.out.println("Available tables for making a reservation: ");
             for(Table table:availableTables)
