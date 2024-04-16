@@ -67,7 +67,7 @@ public class  Staff extends Person {
                         invalidId = false;
                     }
                 }
-                if (invalidId) {
+                if (!invalidId) {
                     Manager.getEmployees().get(i).salary = salary;
                     System.out.println("Salary of employee "+ Manager.getEmployees().get(i).getName()+" is now: "+Manager.getEmployees().get(i).getSalary());
                     System.out.println("************************************************************");
@@ -94,10 +94,38 @@ public class  Staff extends Person {
 
     //Manager only can set rank
     public void setRank(String rank) {
-        if(this instanceof Manager)
-        this.rank = rank;
-        else
+        Scanner in = new Scanner(System.in);
+        boolean invalidId = true;
+        String continueInput="";
+
+        if (this instanceof Manager) {
+            do {
+                System.out.println("Enter ID of employee to set rank: ");
+                String id= in.next();
+                int i;
+                for (i = 0; i < Manager.getEmployees().size(); i++) {
+                    if (Manager.getEmployees().get(i).getEmployeeID().equals(id)) {
+                        invalidId = false;
+                    }
+                }
+                if (!invalidId) {
+                    Manager.getEmployees().get(i).rank = rank;
+                    System.out.println("Rank of employee "+ Manager.getEmployees().get(i).getName()+" is now: "+Manager.getEmployees().get(i).getRank());
+                    System.out.println("************************************************************");
+                } else {
+                    System.out.println("Entered ID doesn't belong to an existing employee");
+                    System.out.println("Do you wish to re-try entering the ID (YES/NO)?");
+                    continueInput=in.next();
+                    System.out.println("************************************************************");
+                }
+            }while(invalidId && continueInput.equalsIgnoreCase("YES"));
+        }
+        else {
             System.out.println("You don't have an access to change ranks of Staff");
+            System.out.println("************************************************************");
+            return;
+        }
+
     }
 
     @Override
