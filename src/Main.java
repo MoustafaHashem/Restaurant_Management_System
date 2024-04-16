@@ -4,6 +4,7 @@ import Restaurant.*;
 import Services.*;
 
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -27,7 +28,7 @@ public class Main {
             Manager.getTables().get(i).print();
         }
 
-        System.out.println("************************************************************");
+        System.out.println("---------------------------------------------");
         for (int i=0;i<mousatafa.getEmployees().size();i++) {
             mousatafa.getEmployees().get(i).print();
         }
@@ -35,25 +36,26 @@ public class Main {
         for (int i=0;i<mousatafa.getEmployees().size();i++) {
             mousatafa.getEmployees().get(i).print();
         }
-
-//        for (int i=0;i<mousatafa.getMenus().size();i++) {
-//            mousatafa.getMenus().get(i).print();
-//        }
-//        System.out.println("************************************************************");
-//        for (int i=0;i<mousatafa.getMenuSections().size();i++) {
-//            mousatafa.getMenuSections().get(i).print();
-//        }
-//        System.out.println("************************************************************");
-//        for (int i=0;i<mousatafa.getMenuItems().size();i++) {
-//            mousatafa.getMenuItems().get(i).print();
-//        }
-//        System.out.println("************************************************************");
+        System.out.println("---------------------------------------------");
+        for (int i=0;i<mousatafa.getMenus().size();i++) {
+            mousatafa.getMenus().get(i).print();
+        }
+        System.out.println("---------------------------------------------");
+        for (int i=0;i<mousatafa.getMenuSections().size();i++) {
+            mousatafa.getMenuSections().get(i).print();
+        }
+        System.out.println("---------------------------------------------");
+        for (int i=0;i<mousatafa.getMenuItems().size();i++) {
+            mousatafa.getMenuItems().get(i).print();
+        }
+        System.out.println("---------------------------------------------------------------------------------");
             Reservation.makeReservation(LocalDate.now(),1);
-//            Order.addOrder(1);
-//            Bill.payment(1);
-       Reservation.cancelReservation();
-       Reservation.printReservation();
-//       kemo.setSalary(1000);
-       kemo.setRank("manager");
+            try{
+                Order.addOrder(1);
+            }catch(InputMismatchException e){
+                System.out.println("Invalid input: please enter an integer");
+            }
+            Bill.payment(1);
+        System.out.println("hey");
     }
 }
