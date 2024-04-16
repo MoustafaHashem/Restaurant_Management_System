@@ -177,7 +177,6 @@ private final static ArrayList<Reservation> reservations=new ArrayList<>();
             System.out.println("************************************************************");
         }
     }
-
     public static void printReservation()
     {
         for(Reservation r: reservations)
