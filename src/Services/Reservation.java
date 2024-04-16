@@ -166,7 +166,6 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
                     c.checkIn();
                     Manager.getTables().get(wantedTable).setCustomer(c);
                     Manager.getTables().get(wantedTable).setIsReserved(true);
-                    Manager.getTables().get(wantedTable).addReservation(r);
                     System.out.println("Reservation done successfully");
                     System.out.println("Your Reservation ID is: "+ r.getReservationId());
                     System.out.println("************************************************************");
