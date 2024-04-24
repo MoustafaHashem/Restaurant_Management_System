@@ -49,7 +49,7 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
         this.reservationId = ID;
     }
 
-    public void setnumberOfPeople(int numberOfPeople) {
+    public void setNumberOfPeople(int numberOfPeople) {
         this.numberOfPeople = numberOfPeople;
     }
     public static void cancelReservation(){
@@ -103,7 +103,7 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
             if (reservations.get(i).getReservationId() == id)
                 break;
         }
-        reservations.get(i).setnumberOfPeople(n);
+        reservations.get(i).setNumberOfPeople(n);
         System.out.println("changed");
     }
     public  static void changeReservation(int id,LocalDate d,int n){
@@ -113,7 +113,7 @@ private  static ArrayList<Reservation> reservations=new ArrayList<>();
             if (reservations.get(i).getReservationId() == id)
                 break;
         }
-        reservations.get(i).setnumberOfPeople(n);
+        reservations.get(i).setNumberOfPeople(n);
         reservations.get(i).setDate(d);
         System.out.println("changed");
     }

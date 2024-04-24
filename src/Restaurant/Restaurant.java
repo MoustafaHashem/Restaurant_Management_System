@@ -2,6 +2,7 @@ package Restaurant;
 
 import Human.Staff;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface Restaurant {
       String NAME="Gusteau";
@@ -11,7 +12,7 @@ public interface Restaurant {
      ArrayList<Table> tables=new ArrayList<>();
      ArrayList<Menu> menus=new ArrayList<>();
      ArrayList<MenuSection> menuSections=new ArrayList<>();
-     ArrayList<MenuItem> menuItems=new ArrayList<>();
+    ArrayList<MenuItem> menuItems=new ArrayList<>();
      void addMenu(Menu m);
      void addMenuSection(MenuSection ms);
      void addMenuItem(MenuItem mi);

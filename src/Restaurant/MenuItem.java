@@ -1,6 +1,14 @@
 package Restaurant;
 
-public class MenuItem {
+import Human.Manager;
+import Restaurant.Restaurant;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collector;
+
+import static Restaurant.Restaurant.menuItems;
+
+public class MenuItem implements Comparable {
     private final String title;
     private final int ID;
     private static int count;
@@ -36,8 +44,30 @@ public class MenuItem {
     public int getID() {
         return ID;
     }
+    @Override
+    public int compareTo(Object m) {
+        int returnValue=0;
+
+//            if (this.getTitle().compareTo(((MenuItem)m).getTitle()) > 0){
+//                returnValue= 1;
+//            }
+//            else if(this.getTitle().compareTo(((MenuItem)m).getTitle()) < 0){
+//                returnValue= -1;
+//            }
+        if (this.getPrice()>((MenuItem)m).getPrice() ){
+            returnValue= 1;
+        }
+        else if(this.getPrice()< ((MenuItem)m).getPrice() ){
+            returnValue= -1;
+        }
+
+        return returnValue;
+    }
+
     public void print() {
         menuSection.print();
         System.out.println("MenuItem{" + "title= " + title + ", ID= " + ID + ", price= " + price + '}');
     }
+
+
 }
