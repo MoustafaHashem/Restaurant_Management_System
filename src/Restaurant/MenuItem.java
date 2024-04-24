@@ -47,7 +47,7 @@ public class MenuItem implements Comparable {
     @Override
     public int compareTo(Object m) {
         int returnValue=0;
-
+//
 //            if (this.getTitle().compareTo(((MenuItem)m).getTitle()) > 0){
 //                returnValue= 1;
 //            }
